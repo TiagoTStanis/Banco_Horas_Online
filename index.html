@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Gestão de Horas e Demandas</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+</head>
+
+<body>
+  <header>
+    <h1>Gestão de Horas e Demandas</h1>
+  </header>
+
+  <main class="container">
+    
+    <div class="top-grid">
+      <!-- Seção de Configuração de Horários -->
+      <section class="section">
+        <h2>Configuração de Horários</h2>
+        <div class="horarios-container">
+          <div class="horario-bloco">
+            <label for="inicioManha">Início da Manhã</label>
+            <input type="time" id="inicioManha" value="07:42">
+          </div>
+          <div class="horario-bloco">
+            <label for="fimManha">Fim da Manhã</label>
+            <input type="time" id="fimManha" value="12:00">
+          </div>
+          <div class="horario-bloco">
+            <label for="inicioTarde">Início da Tarde</label>
+            <input type="time" id="inicioTarde" value="13:30">
+          </div>
+          <div class="horario-bloco">
+            <label for="fimTarde">Fim da Tarde</label>
+            <input type="time" id="fimTarde" value="18:00">
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção de Cronômetro de Trabalho -->
+      <section class="section def-horas">
+        <h2>Cronômetro de Trabalho (Dia)</h2>
+        <p class="info">Minutos trabalhados hoje: <span id="minutosTrabalhadosDia">0</span></p>
+        <p class="info">Minutos restantes hoje: <span id="minutosRestantesDia">0</span></p>
+      </section>
+    </div>
+
+    <!-- Registro de Demandas -->
+    <section class="section">
+      <h2>Registro de Demandas</h2>
+      <div class="demanda-input">
+        <input type="text" id="demandaNome" placeholder="Nome da Demanda" class="input-text" />
+        <button class="btn" onclick="iniciarDemanda()">Iniciar Demanda</button>
+      </div>
+      <ul id="listaDemandas" class="demandas-list"></ul>
+      <p id="diferencaTempo" class="info"></p>
+    </section>
+  </main>
+
+  <button id="toggleDarkMode" class="btn" style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">🌙 Alternar Modo</button>
+  <script src="./js/logic.js"></script>
+</body>
+
+</html>
