@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Gestão de Horas e Demandas</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <!-- <p>User: <span id="usuarioNome"></span></p> -->
+  <header>
+    <h1>Gestão de Horas e Demandas</h1>
+  </header>
+
+  <section class="def-horas">
+    <h2>Configuração de Horários</h2>
+    <div class="horarios-container">
+      <!-- Inputs time... -->
+      <div class="horario-bloco">
+        <label for="inicioManha">Início da Manhã</label>
+        <input type="time" id="inicioManha" value="07:42">
+      </div>
+      <div class="horario-bloco">
+        <label for="fimManha">Fim da Manhã</label>
+        <input type="time" id="fimManha" value="12:00">
+      </div>
+      <div class="horario-bloco">
+        <label for="inicioTarde">Início da Tarde</label>
+        <input type="time" id="inicioTarde" value="13:30">
+      </div>
+      <div class="horario-bloco">
+        <label for="fimTarde">Fim da Tarde</label>
+        <input type="time" id="fimTarde" value="18:00">
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="section">
+      <h2>Cronômetro de Trabalho (Dia)</h2>
+      <p class="info">
+        Minutos trabalhados hoje: <span id="minutosTrabalhadosDia">0</span>
+      </p>
+      <p class="info" id="minutosRestantesDia"></p>
+    </section>
+
+    <section class="section">
+      <h2>Registro de Demandas</h2>
+      <div class="demanda-input">
+        <input type="text" id="demandaNome" placeholder="Nome da Demanda" class="input-text" />
+        <button class="btn" onclick="iniciarDemanda()">Iniciar Demanda</button>
+      </div>
+      <ul id="listaDemandas" class="demandas-list"></ul>
+      <!--<p id="diferencaTempo" class="info"></p>-->
+    </section>
+
+    <!-- <section class="section log-section">
+      <h2>Log</h2>
+      <ul id="logAtividades" class="log-list"></ul>
+    </section> -->
+
+  </main>
+
+  <script src="./js/logic.js"></script>
+</body>
+
+</html>
