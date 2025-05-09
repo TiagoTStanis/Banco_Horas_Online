@@ -39,7 +39,7 @@ function calcularMinutosTrabalhadosHoje() {
     minutosTotais += (fimTarde - inicioTarde) / 60000;
   }
 
-  return Math.floor(Math.min(minutosTotais, 528));
+  return Math.floor(Math.min(minutosTotais, capacidadeDia()));
 }
 
 // Modo Dark
@@ -232,8 +232,10 @@ function renderizarDemandas() {
 }
 
 // Atualização inicial e listener para horários
-setInterval(atualizarDia, 1000);
-atualizarDia();
+window.addEventListener('DOMContentLoaded', () => {
+  setInterval(atualizarDia, 1000);
+  atualizarDia();
+});
 
 ['inicioManha', 'fimManha', 'inicioTarde', 'fimTarde'].forEach(id => {
   const input = document.getElementById(id);
